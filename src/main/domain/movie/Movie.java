@@ -1,7 +1,11 @@
 package main.domain.movie;
 
+import main.infrastructure.web.dependency.annotation.Model;
+
+@Model
 public class Movie {
 
+    private Long id;
     private String title;
 
     public Movie(String title){
@@ -11,5 +15,9 @@ public class Movie {
     @Override
     public String toString() {
         return "{\"title\":" + "\"" + title + "\"}";
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 }
