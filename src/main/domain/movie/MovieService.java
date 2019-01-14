@@ -3,6 +3,8 @@ package main.domain.movie;
 import main.infrastructure.web.dependency.annotation.Component;
 import main.infrastructure.web.server.response.ResponseBody;
 
+import java.util.Optional;
+
 @Component
 class MovieService {
 
@@ -36,4 +38,14 @@ class MovieService {
         return body;
     }
 
+    public ResponseBody getById(String id) {
+        ResponseBody body = new ResponseBody();
+        Optional<Movie> movieOptional = provider.getById(new Long(id));
+        if (movieOptional.isPresent()){
+            body.setContent(movieOptional.toString());
+        } else {
+            body.setContent("MOVIE NOT FOUND");
+        }
+        return body;
+    }
 }

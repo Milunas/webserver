@@ -2,10 +2,8 @@ package main;
 
 import main.infrastructure.web.server.Server;
 
-import java.io.IOException;
-
 public class WebServerRunner {
-    public static void main(String...args) throws IOException {
+    public static void main(String...args) throws Exception {
         System.out.println("APPLICATION STARTING");
         System.out.println("INITIALIZING ENDPOINTS");
         Server server = new Server();

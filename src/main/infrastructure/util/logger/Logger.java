@@ -16,11 +16,11 @@ public class Logger {
     }
 
     public void info(Object toLog){
-        System.out.println(ANSI_GREEN + new Date() + ": [" + Thread.currentThread().getName() + ": [" + classContext + "]: " + toLog + ANSI_BACK_TO_NORMAL);
+        System.out.println(ANSI_GREEN + new Date() + ": [" + Thread.currentThread().getName() + "]: [" + classContext + "]: " + toLog + ANSI_BACK_TO_NORMAL);
     }
 
     public void warn(Object toLog){
-        System.out.println(ANSI_YELLOW + new Date() + ": [" + Thread.currentThread().getName() + ": [" + classContext + "]: " + toLog + ANSI_BACK_TO_NORMAL);
+        System.out.println(ANSI_YELLOW + new Date() + ": [" + Thread.currentThread().getName() + "]: [" + classContext + "]: " + toLog + ANSI_BACK_TO_NORMAL);
     }
 
     public void error(Object errorToLog){

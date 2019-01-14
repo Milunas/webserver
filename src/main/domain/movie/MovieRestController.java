@@ -8,6 +8,7 @@ import main.infrastructure.web.server.http.HttpProtocol;
 import main.infrastructure.web.server.http.HttpStatus;
 import main.infrastructure.web.server.request.Request;
 import main.infrastructure.web.server.response.Response;
+import main.infrastructure.web.server.response.ResponseBody;
 
 @Component
 public class MovieRestController {
@@ -37,7 +38,12 @@ public class MovieRestController {
 
     @Endpoint(path = "/api/movies/"+ID, method = "GET")
     public Response getMovie(Request request) {
-        return prepareResponse(request.getProtocol());
+        String[] strings = request.getEndpoint().getPath().split("/");
+        String id = strings[3];
+        String body = service.getById(id).getContent();
+        Response response = prepareResponse(request.getProtocol());
+        response.setBody(body);
+        return response;
     }
 
     @Endpoint(path = "/api/movies/"+ID, method = "GET")

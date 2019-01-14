@@ -3,6 +3,7 @@ package main.domain.movie;
 import main.infrastructure.web.dependency.annotation.Component;
 
 import java.util.Map;
+import java.util.Optional;
 import java.util.Set;
 
 @Component // place for sql queries - in future
@@ -23,7 +24,7 @@ class MovieProvider {
         return repository.save(movie);
     }
 
-    Movie getById(Movie movie, Long id){
-        return repository.findById(id).orElse(null);
+    Optional<Movie> getById(Long id){
+        return repository.findById(id);
     }
 }

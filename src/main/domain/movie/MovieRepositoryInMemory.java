@@ -43,6 +43,6 @@ class MovieRepositoryInMemory {
     }
 
     Optional<Movie> findById(Long id){
-        return Optional.of(concurrentHashMap.get(id));
+        return Optional.ofNullable(concurrentHashMap.get(id));
     }
 }

@@ -1,6 +1,7 @@
 package main.infrastructure.web.endpoint;
 
 import main.domain.movie.MovieRestController;
+import main.infrastructure.web.dependency.DependencyLoader;
 import main.infrastructure.web.server.http.HttpEndpoint;
 import main.infrastructure.web.server.request.Request;
 import main.infrastructure.web.server.response.Response;
@@ -55,5 +56,4 @@ public class DeclaredEndpoint {
         getMovie.setMethod("GET");
         return getMovie;
     }
-
 }
